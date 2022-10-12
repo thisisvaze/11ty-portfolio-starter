@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="h-100" lang="{{ metadata.language }}">
+
+  <head>
+    {% include 'snippets/head.njk' %}
+  </head>
+
+  <body>
+
+    {% include 'snippets/navbar.njk' %}
+    <img class="w-100 position-absolute" style="z-index:-10; height:45vh; object-fit:cover;overflow: hidden;" src="./img/main_bg.png"/>
+    <main class="container py-vh-0">
+      <div class="row d-flex justify-content-center">
+        <div class="py-vh-6 col-12 col-xl-8 my-4 text-center">
+          <h1 class=" display-4">{{ title }}</h1>
+
+          <p class="fs-6">{{ subtitle }}</p>
+
+          <a target="_blank" class="link-fancy pt-4 position-relative" href= {{linkedin_url}}>
+            <p class="fs-6 mb-0">
+              {{contact_text}}</p>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="container py-vh-4 mt-5 pt-0">
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-10">
+        <p class="fs-2 mb-0 pb-0 text-center text-muted">Projects</p>
+
+        {% include 'snippets/postloop.njk' %}
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    {% include 'snippets/footer.njk' %}
+  </footer>
+
+</body>
+
+</html>

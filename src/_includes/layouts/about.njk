@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="h-100" lang="{{ metadata.language }}">
+
+  <head>
+    {% include 'snippets/head.njk' %}
+  </head>
+
+  <body>
+
+    {% include 'snippets/navbar.njk' %}
+
+    <main class="container text-center">
+      <div class="row justify-content-center">
+        {% myProfilePhoto "./src/img/profile.png",
+        "profile_pic" %}
+        <div class="col-10 col-lg-8 col-xl-6"
+        ><br>
+          <p class="mb-0 fs-3">
+            About Me
+          </p>
+
+          <div>
+            <p class="lead">
+              {{about_content}}</p>
+          </div>
+          <p class=" fs-3">
+            Work
+          </p>
+          <a class="link-fancy mb-3" href= {{link1_url}}>
+            <p class="fs-6 mb-0">{{ link1 }}</p>
+          </a>
+          <br>
+          <a class="link-fancy mb-3" href= {{link2_url}}>
+            <p class="fs-6 mb-0">{{ link2 }}</p>
+          </a>
+          <br>
+          <a class="link-fancy mb-3" href= {{link3_url}}>
+            <p class="fs-6 mb-0">{{ link3 }}</p>
+          </a>
+          <p class=" fs-3 mt-5">
+            Contact
+          </p>
+
+          <p class="fs-6 mb-3">{{ email }}</p>
+          <a class="link-fancy mb-3" href= {{meetlink_url}}>
+            <p class="fs-6 mb-0">{{ meetlink }}</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container">
+      {% include 'snippets/footer.njk' %}
+    </footer>
+
+  </body>
+
+</html>

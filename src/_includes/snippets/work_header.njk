@@ -1,0 +1,58 @@
+<header class="border-bottom pb-4 mb-4">
+  <div class="col-12">
+    {% block extraArticleHeader %}
+      <h1 class="pt-3">{{ title }}</h1>
+
+      <a class="link-fancy me-2" href= {{link1_url}}>
+        <p class="fs-6 mb-0">{{ link1 }}</p>
+      </a>
+      <a class="link-fancy me-2" href= {{link2_url}}>
+        <p class="fs-6 mb-0 ">{{ link2 }}</p>
+      </a>
+      <a class="link-fancy me-2" href= {{link3_url}}>
+        <p class="fs-6 mb-0">{{ link3 }}</p>
+      </a>
+
+      {% set wc = content | striptags | wordcount %}
+
+      <div>
+        <div class="pt-5 row">
+
+          <div class="col-12 col-lg-8">
+            <p class="mb-1 fw-bold">
+            Context
+          </p>
+            <p class="fs-5">
+              {{context}}
+            </p>
+
+          </div>
+          <div class="col-12 col-lg-4">
+            <p class="mb-1 fw-bold">
+              {{summary_title1}}
+            </p>
+            <p class="fs-5">
+              {{summary1}}
+            </p>
+            <div></div>
+
+            <p class="mb-1 fw-bold">
+              {{summary_title2}}
+            </p>
+            <p class="fs-5">
+              {{summary2}}
+            </p>
+            <p class="mb-1 fw-bold">
+              {{summary_title3}}
+            </p>
+            <p class="fs-5">
+              {{summary3}}
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+    {% endblock %}
+  </header>

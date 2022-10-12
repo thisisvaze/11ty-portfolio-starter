@@ -1,0 +1,65 @@
+{
+  "name": "11ty-portfolio-template",
+  "version": "0.3.0",
+  "description": "11ty Portfolio template",
+  "license": "MIT",
+  "private": "true",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run clean && npm run clean-prod  && npx eleventy && gulp sass && gulp dist-assets && gulp minify-css && gulp prod-copy && gulp inject-min-css && gulp purgecss && gulp minify-html",
+    "build-dev": "eleventy && gulp dist-assets && gulp sass",
+    "11ty": "eleventy && gulp inject-css",
+    "sync": "gulp browser-sync",
+    "watch-dev": "npm run build-dev && npm run sync",
+    "postinstall": "gulp copy-assets",
+    "scss": "node-sass --output-style compressed -o dev/css/ src/scss/theme.scss",
+    "watch:all": "onchange 'src/' -- npm run build-dev",
+    "serve": "eleventy --serve",
+    "watch": "npm run clean && npm run build-dev && run-p sync watch:all",
+    "clean": "gulp clean-dev",
+    "clean-prod": "gulp clean-public"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "2.0.0-canary.14",
+    "@11ty/eleventy-img": "2.0.1",
+    "bootstrap": "5.2.0",
+    "browser-sync": "^2.27.10",
+    "clean-css": "^5.3.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "npm-watch": "^0.11.0",
+    "watch": "^1.0.2"
+  },
+  "author": "Aaditya Vaze",
+  "devDependencies": {
+    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "bootstrap-icons": "^1.9.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-purgecss": "^4.1.3",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.0.2",
+    "react-is": "^18.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aadityavaze/11ty-portfolio-template"
+  },
+  "keywords": [
+    "eleventy",
+    "eleventy-template",
+    "portfolio"
+  ],
+  "homepage": "https://thisisvaze.com"
+}
