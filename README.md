@@ -10,7 +10,7 @@ npm install
 
 ```
 npm run watch
-![template preview](template_preview.png)
+![template preview](https://github.com/aadityavaze/11ty-portfolio-starter/blob/main/template_preview.png)
 ```
 
 ## To deploy
